@@ -1,7 +1,4 @@
-const exampleInput = Deno.readTextFileSync("day01_example.txt");
-const input = Deno.readTextFileSync("day01.txt");
-
-function day01Part1(input: string): number {
+export function day01Part1(input: string): number {
   const [left, right] = input.split("\n").reduce<[number[], number[]]>(
     ([leftList, rightList], line) => {
       if (line.trim() === "") return [leftList, rightList];
@@ -23,5 +20,5 @@ function day01Part1(input: string): number {
   }, 0);
 }
 
-console.log(day01Part1(exampleInput));
+const input = Deno.readTextFileSync("day01/day01.txt");
 console.log(day01Part1(input));
